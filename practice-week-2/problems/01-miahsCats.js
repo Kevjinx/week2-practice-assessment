@@ -21,9 +21,26 @@ miahsCats(obj1) // 3
 
 
 
+
 ***********************************************************************/
 
 // Your code here
+
+const miahsCats = obj => {
+  const arr = [...Object.keys(obj), ... Object.values(obj)];
+  console.log(arr);
+  let count = 0;
+  arr.filter(el => {
+    el = el.toLowerCase();
+    if (el.includes('cute')  || el.includes('adorable')) {
+      count++;
+    }
+  })
+  return count;
+}
+
+
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{
