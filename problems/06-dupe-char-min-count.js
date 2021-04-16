@@ -11,11 +11,34 @@ duplicateCharMinCount("banana", 2) // ["a", "n"]
 duplicateCharMinCount("What about a longer string?", 3) // ["a", "t", " "]
 ***********************************************************************/
 
-function duplicateCharMinCount(string, minCount) {
+const duplicateCharMinCount = (string, minCount) => {
+  let result = [];
+  let arr = string.split('').sort();
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i + minCount - 1] === arr[i]) {
+      result.push(arr[i])
+      i += minCount - 1
+    }
+  }
+  for (let i = 0; i < result.length; i++) {
+    const element = result[i];
+    if (element === " ") {
+      result.splice(i, 1)
+      result.push(" ");
 
-	// your code here
+    }
+  }
 
+  console.log(result);
+  return result;
 }
+
+
+
+duplicateCharMinCount("apple", 2) // ["p"]
+duplicateCharMinCount("banana", 2) // ["a", "n"]
+duplicateCharMinCount("What about a longer string?", 3) // ["a", "t", " "]
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = duplicateCharMinCount;

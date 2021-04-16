@@ -13,6 +13,17 @@ sentenceMaker('The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'd
 
 // your code here
 
+const sentenceMaker = (...str) => {
+  const sentence = str.join(' ') + '!';
+  console.log(sentence);
+  return sentence;
+}
+
+sentenceMaker('Hello', 'World'); // 'Hello World!'
+sentenceMaker('I', 'love', 'coding'); // 'I love coding!'
+sentenceMaker('The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'); // 'The quick brown fox jumps over the lazy dog!'
+
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
 	module.exports = sentenceMaker;

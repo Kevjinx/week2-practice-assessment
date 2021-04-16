@@ -22,6 +22,33 @@ filterUserProfiles(facebookUsers, (user) => user.state === "New York"); // ["Mik
 
 // your code here
 
+
+const filterUserProfiles = (arr, cb) => {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    const obj = arr[i];
+    if (cb(obj)) {
+      result.push(obj.name)
+    }
+  }
+
+  console.log(result);
+  return result;
+}
+
+
+const facebookUsers = [
+  { name: "John", age: "21", state: "Florida" },
+  { name: "Mary", age: "57", state: "California" },
+  { name: "Judy", age: "47", state: "Texas" },
+  { name: "Mike", age: "32", state: "New York" }
+];
+
+filterUserProfiles(facebookUsers, (user) => user.age > 30); // ["Mary", "Judy", "Mike"]
+filterUserProfiles(facebookUsers, (user) => user.state === "New York"); // ["Mike"]
+
+
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = filterUserProfiles;

@@ -19,11 +19,27 @@ console.log(clothesList); // ['tshirt', 'pants']
 
 ***********************************************************************/
 
-function shoppingList(list) {
+const shoppingList = list => {
 
-  // your code here
+
+  return func = item => {
+    list.push(item);
+    console.log(list);
+    return list;
+  }
+
 
 }
+
+const groceryList = ['eggs']
+const addToGroceryList = shoppingList(groceryList); // returns a function
+addToGroceryList('maple syrup'); // returns ['eggs', 'maple syrup']
+
+const clothesList = []
+const addToClothesList = shoppingList(clothesList);
+addToClothesList('tshirt'); // returns ['tshirt']
+addToClothesList('pants'); // returns ['tshirt', 'pants']
+console.log(clothesList); // ['tshirt', 'pants']
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = shoppingList;
