@@ -28,6 +28,32 @@ console.log(applyCoupon(20, wishList)); // => 78.4;
 *******************************************************************************/
 
     // Your code here
+const applyCoupon = (discount, arrObj) => {
+  let cost = 0;
+  const percentDiscount = discount/100
+  //iterate through array, cost += discount*obj.price
+  for (let i = 0; i < arrObj.length; i++) {
+    const obj = arrObj[i];
+    const _price = obj.price
+    cost += _price - _price*percentDiscount;
+  }
+
+  return cost;
+}
+
+
+
+    wishList = [
+      {name: "Xbox", price: 80},
+      {name: "Bacon", price: 5},
+      {name: "Gummy Candies", price: 3},
+      {name: "SURGE soda 24 pack", price: 10}
+      ];
+
+
+console.log(applyCoupon(10, wishList)); // => 88.2;
+console.log(applyCoupon(20, wishList)); // => 78.4;
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS LINE**********************/
 try{

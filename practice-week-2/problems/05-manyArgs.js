@@ -22,6 +22,18 @@ manyArgs(1, 2, 5, 6) // 60
 
 // Your code here
 
+
+const manyArgs = (...num) => {
+  return num.reduce((acc, el) => {
+    return acc*el;
+  })
+}
+
+console.log(manyArgs(1, 2, 3, 4, 5, 6, 7)) // 5040
+console.log(manyArgs(1, 2, 5, 6, 7)) // 420
+console.log(manyArgs(1, 2, 5, 6) )// 60
+
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try{
     module.exports = manyArgs;
