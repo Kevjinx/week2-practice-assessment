@@ -20,9 +20,26 @@
 
 */
 
-function dynamicModulus(num) {
-   
+const dynamicModulus = (num) => {
+
+  return func = (funcNum) => {
+    return funcNum%num
+  }
+
+
 }
+
+
+const modulusTwo = dynamicModulus(2); // returns a function
+console.log(modulusTwo(5)); // prints 1
+
+const modulusTen = dynamicModulus(10); // returns a function
+console.log(modulusTen(13)); // prints 3
+
+const modulusNine = dynamicModulus(9); // returns a function
+console.log(modulusNine(30)); // prints 3
+
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
@@ -30,4 +47,3 @@ try {
 } catch (e) {
     module.exports = null;
 }
-
